@@ -5,7 +5,7 @@
 :root {
     /* Colors */ 
     --orange-color: rgb(246, 99, 53);
-    --light-color:rgba(222, 230, 219, 0.979);
+    --light-color:rgba(13, 14, 13, 0.979);
     --border: rgba(255, 255, 255, 0.25);
     --background: rgba(255, 255, 255, 0.1);
     --box_shadow: rgba(3, 46, 87, 0.3);
@@ -23,7 +23,7 @@ html{
     font-family: 'Poppins', sans-serif;
 }
 body {
-    background: url(images/dark-bg.jpg);
+    /* background: url(images/dark-bg.jpg); */
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -32,6 +32,8 @@ body {
     align-items: center;
     justify-content: center;
     color: whitesmoke;
+    background-size: cover;
+    transition: all ease-in-out 200ms;
 }
 .container {
     /* width: 35%; */

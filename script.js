@@ -2,6 +2,7 @@
 let show = document.getElementById("show");
 let search = document.getElementById("search");
 let cityVal = document.getElementById("city");
+const body = document.querySelector("body")
 
 
 //Make sure you have your own key.
@@ -19,7 +20,7 @@ let getWeather = () => {
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
-        
+        let weather = data.weather[0].main
 
         show.innerHTML = `
         <h2>${data.name}, ${data.sys.country}</h2>
@@ -38,7 +39,7 @@ let getWeather = () => {
          </div>   
         </div>
         `;
-
+        getGradientForTemperature(weather)
 
       })
       .catch(() => {
@@ -47,6 +48,24 @@ let getWeather = () => {
   }
 };
 
+function getGradientForTemperature(temp) {
+  if (temp === 'Clear') {
+    body.style.background = "url(images/clear.webp)"; // Freezing (Blue shades)
+    body.style.backgroundSize = "cover";
+  } else if (temp === 'Clouds') {
+    body.style.background = "url(images/cloudy.jpg)"; // Cold (Light Blue)
+    // body.style.backgroundSize = "cover";
+  } else if (temp === 'Smoke') {
+    body.style.background = "url(images/smoke.jpg)"; // Cool (Mild Blue)
+    body.style.backgroundSize = "cover";
+  } else if (temp === 'Rain') {
+    body.style.background = "url(images/rain.jpg)"; // Warm (Orange-Peach)
+    body.style.backgroundSize = "cover";
+  } else if (temp === 'Thunderstorm') {
+    body.style.background = "url(images/thunderstorm.jpg)";
+    body.style.backgroundSize = "cover"; // Hot (Pink-Red)
+  } 
+}
 
 
 search.addEventListener("click", getWeather);
