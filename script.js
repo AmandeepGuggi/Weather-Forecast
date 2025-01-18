@@ -5,7 +5,6 @@ let cityVal = document.getElementById("city");
 const body = document.querySelector("body")
 
 
-//Make sure you have your own key.
 let key = "2f745fa85d563da5adb87b6cd4b81caf";
 
 let getWeather = () => {
@@ -50,20 +49,20 @@ let getWeather = () => {
 
 function getGradientForTemperature(temp) {
   if (temp === 'Clear') {
-    body.style.background = "url(images/clear.webp)"; // Freezing (Blue shades)
+    body.style.background = "url(images/clear.webp)"; 
     body.style.backgroundSize = "cover";
   } else if (temp === 'Clouds') {
-    body.style.background = "url(images/cloudy.jpg)"; // Cold (Light Blue)
+    body.style.background = "url(images/cloudy.jpg)"; 
     // body.style.backgroundSize = "cover";
   } else if (temp === 'Smoke') {
-    body.style.background = "url(images/smoke.jpg)"; // Cool (Mild Blue)
+    body.style.background = "url(images/smoke.jpg)";
     body.style.backgroundSize = "cover";
   } else if (temp === 'Rain') {
-    body.style.background = "url(images/rain.jpg)"; // Warm (Orange-Peach)
+    body.style.background = "url(images/rain.jpg)"; 
     body.style.backgroundSize = "cover";
   } else if (temp === 'Thunderstorm') {
     body.style.background = "url(images/thunderstorm.jpg)";
-    body.style.backgroundSize = "cover"; // Hot (Pink-Red)
+    body.style.backgroundSize = "cover"; 
   } 
 }
 
